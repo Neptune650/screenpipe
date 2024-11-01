@@ -97,7 +97,8 @@ jobs:
         
         Get-Content "screenpipe_output.log" -Tail 100
         Get-Content "screenpipe_error.log"
-        ls ${{ env.USERPROFILE }}\.screenpipe
+        powershell -Command { ls C:\Users\runneradmin\.screenpipe }
+        powershell -Command { ls C:\Users\runner\.screenpipe }
 
     - name: Upload logs and data
       uses: actions/upload-artifact@v3
