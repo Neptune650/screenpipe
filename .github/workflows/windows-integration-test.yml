@@ -97,6 +97,7 @@ jobs:
         
         Get-Content "screenpipe_output.log" -Tail 100
         Get-Content "screenpipe_error.log"
+        ls ${{ env.USERPROFILE }}\.screenpipe
 
     - name: Upload logs and data
       uses: actions/upload-artifact@v3
